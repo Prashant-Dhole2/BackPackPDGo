@@ -26,7 +26,7 @@ body {
 
 .home-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .btn-explore {
@@ -44,7 +44,7 @@ body {
 
 .about-section {
 padding: 80px 0;
-height: 100vh;  
+
 }
 
 .text-orange {
@@ -71,15 +71,16 @@ background: #E65A1B;
 }
 
 .about-images img {
-    border-radius: 20px;
     width: 100%;
+    border-radius: 20px;
+
 }
 
 .about-images .img1 {
     position: absolute;
-    bottom: -40px;
-    left: 30px;
-    width: 250px;
+    bottom: -30px;
+    left: 40px;
+    width: 220px;
     border: 5px solid white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -317,59 +318,33 @@ background: #E65A1B;
 .explore-btn:hover {
     background-color: #E65A1D;
 }
+
 .carousel-container {
     position: relative;
-    width: 100%; 
-    max-width: 460px; 
+    width: 460px;
     overflow: hidden;
     border-radius: 15px;
-    margin: auto; 
+}
 
 .carousel-images {
     display: flex;
+    width: 100%;
     transition: transform 0.5s ease-in-out;
-    gap: 10px;
 }
 
 .carousel-images img {
-    width: 100%; 
-    max-width: 220px; 
+    width: 220px;
     height: 300px;
     object-fit: cover;
+    margin-right: 15px;
     border-radius: 15px;
 }
 
-/* Controls */
 .carousel-controls {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
-
-@media (max-width: 768px) {
-    .carousel-container {
-        width: 90%; /* Reduce width */
-    }
-    .carousel-images img {
-        max-width: 180px; /* Smaller images */
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-container {
-        width: 100%; 
-    }
-    .carousel-images {
-        gap: 5px; 
-    }
-    .carousel-images img {
-        max-width: 150px; /
-        height: 220px;
-    }
-}
-
 
 .carousel-btn {
     width: 40px;
