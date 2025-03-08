@@ -84,6 +84,51 @@ background: #E65A1B;
     border: 5px solid white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+/* Left-side content - Bounce In Effect */
+.about-content {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: bounceInLeft 1.2s ease-in-out forwards;
+}
+
+/* Right-side images - Smooth Fade & Slide In */
+.about-images {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: fadeSlideInRight 1.5s ease-out forwards;
+}
+
+/* Bouncing Keyframes for Left Content */
+@keyframes bounceInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(10px);
+    }
+    70% {
+        opacity: 0.8;
+        transform: translateX(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Smooth Fade & Slide for Right Images */
+@keyframes fadeSlideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 .destination-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted */
