@@ -2,6 +2,7 @@
 body {
     font-family: Arial, sans-serif;
 }
+/*Loder */
 
 .home {
     background: url('image/Home.avif') no-repeat center center/cover;
@@ -65,25 +66,30 @@ margin-top: 10px;
 .btn-orange:hover {
 background: #E65A1B;
 } 
-
+ 
 .about-images {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
 }
 
 .about-images img {
     width: 100%;
+    max-width: 600px; 
     border-radius: 20px;
-
 }
 
 .about-images .img1 {
     position: absolute;
-    bottom: -30px;
-    left: 40px;
+    bottom: -50px;
+    left: 60px;
     width: 220px;
     border: 5px solid white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 /* Left-side content - Bounce In Effect */
 .about-content {
     opacity: 0;
@@ -131,11 +137,11 @@ background: #E65A1B;
 }
 .destination-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted */
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 15px;
     padding: 40px;
 }
+
 
 .destination-card {
     position: relative;
@@ -145,10 +151,44 @@ background: #E65A1B;
     align-items: flex-end;
     background-size: cover;
     background-position: center;
+    height: 300px; 
     transition: transform 0.3s ease-in-out;
 }
 
-/* Random heights for each card */
+.destination-card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .about-images .img1 {
+        width: 180px;
+        left: 20px;
+        bottom: -20px;
+    }
+    
+    .destination-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        padding: 20px;
+    }
+
+    .destination-card {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+     
+    
+    .destination-grid {
+        grid-template-columns: 1fr; 
+          padding: 15px;
+    }
+
+    .destination-card {
+        height: 200px;
+    }
+}
+ 
 .destination-card:nth-child(1) {
     grid-row: span 2;
     height: 400px;
@@ -363,20 +403,22 @@ background: #E65A1B;
 .explore-btn:hover {
     background-color: #E65A1D;
 }
-
 .carousel-container {
     position: relative;
-    width: 460px;
+    width: 100%;
+    max-width: 460px; /* Adjust max width */
     overflow: hidden;
     border-radius: 15px;
+    margin: auto; /* Center the carousel */
 }
 
 .carousel-images {
     display: flex;
-    width: 100%;
     transition: transform 0.5s ease-in-out;
+    width: calc(220px * 2 + 15px); /* Width of 2 images + margin */
 }
 
+/* Images */
 .carousel-images img {
     width: 220px;
     height: 300px;
@@ -385,10 +427,48 @@ background: #E65A1B;
     border-radius: 15px;
 }
 
+/* Controls */
 .carousel-controls {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        max-width: 400px;
+    }
+
+    .carousel-images {
+        width: calc(180px * 2 + 10px);
+    }
+
+    .carousel-images img {
+        max-width: 180px;
+        height: 250px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-container {
+        max-width: 320px;
+    }
+
+    .carousel-images {
+        width: calc(150px * 2 + 8px);
+    }
+
+    .carousel-images img {
+        max-width: 150px;
+        height: 200px;
+        margin-right: 8px;
+    }
+
+    .carousel-controls {
+        margin-top: 10px;
+    }
 }
 
 .carousel-btn {
